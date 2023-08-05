@@ -1,4 +1,4 @@
-public class TypeCasting {
+public class ETypeCasting {
     public static void main(String[] args) {
         float f= 200;//output: 200.0
 
