@@ -1,7 +1,7 @@
 /*Find all 3 digit armstrong number*/
 public class QArmstrongNumber {
     public static void main(String[] args) {
-        for (int i = 100;i<=1000;i++){
+        for (int i = 100;i<1000;i++){
             int sum =0;
             int temp =i;
             while (temp>0){
