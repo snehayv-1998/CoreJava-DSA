@@ -26,5 +26,12 @@ public class ETypeCasting {
        // float + int - double = double
         System.out.println((floats + bytes) + " " + (ints / chars) + " " + (doubles * shorts));
         System.out.println(result);
+
+        int z= 5;
+        int x = 2;
+        double r1 =  z/x; //2.0
+        double r2 = (double) z/x; //2.5
+        System.out.println("R1 :"+r1+" R2: "+r2);
     }
+
 }
