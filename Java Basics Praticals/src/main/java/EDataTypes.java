@@ -49,6 +49,11 @@ public class EDataTypes {
             System.out.println("float: " + f);
             System.out.println("double: " + d);
             System.out.println("long: " + l);
+            byte x = 127;
+            x++;
+            x++;
+            System.out.print(x);
+
         }
 
 

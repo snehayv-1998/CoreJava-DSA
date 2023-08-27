@@ -31,7 +31,13 @@ public class ETypeCasting {
         int x = 2;
         double r1 =  z/x; //2.0
         double r2 = (double) z/x; //2.5
-        System.out.println("R1 :"+r1+" R2: "+r2);
+        System.out.println("\nR1 :"+r1+" R2: "+r2);
+
+        double d1= 5.0;
+        double d2= 10.0;
+        if(d1+d2 == 15){
+            System.out.println(" \nd1+d2 == 15");//this will print
+        }
     }
 
 }
