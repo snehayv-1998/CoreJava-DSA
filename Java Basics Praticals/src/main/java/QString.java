@@ -54,8 +54,37 @@ public class QString {
                 c[i]= s.charAt(indices[i]); this moves index[i] to i
                  */
             }
-            System.out.println("Before shuffling : "+s);
+            System.out.println("\n\nBefore shuffling : "+s);
             System.out.println("After shuffling: "+ String.valueOf(c));
+        }
+        {
+            /*
+            Write a function that reverses a string. The input string is given as an array of characters s.
+            You must do this by modifying the input array in-place with O(1) extra memory.
+            Example 1:
+            Input: s = ["h","e","l","l","o"]
+            Output: ["o","l","l","e","h"]
+             */
+            char[] s = {'H','e','l','l','0'};
+            System.out.println("\n\nBefore swapping : "+String.valueOf(s));
+            swapWithoutTemp(s);
+            System.out.println("After swapping : " +String.valueOf(s));
+        }
+    }
+
+    private static void swapWithoutTemp(char[] s) {
+        int start = 0;
+        int end = s.length - 1;
+
+        while (start < end) {
+            // Swap the characters at the start and end pointers
+            s[start] ^= s[end];
+            s[end] ^= s[start];
+            s[start] ^= s[end];
+
+            // Move the pointers towards each other
+            start++;
+            end--;
         }
     }
 
