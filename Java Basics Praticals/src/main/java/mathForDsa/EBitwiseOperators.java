@@ -1,3 +1,5 @@
+package mathForDsa;
+
 import java.io.IOException;
 
 public class EBitwiseOperators {
@@ -32,6 +34,8 @@ public class EBitwiseOperators {
         System.out.println(bitwiseOperation(1,"|",2));
 
         System.out.println(complimentAndShiftOperation(1,"~"));
+        System.out.println("Signed right shift: "+ (-8 >>1));
+        System.out.println("Un Signed right shift: "+ (-8>>>1));
     }
 
     private static int bitwiseOperation(int input1, String operator, int input2) throws IOException {

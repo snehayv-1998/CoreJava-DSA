@@ -18,7 +18,7 @@ public class QPrimeNumber {
      */
     /*With method- */
     public static void main(String[] args) {
-        int n =0;
+        int n =11;
         int c = 2;
         if(isPrime(n, c))
             System.out.println(n+" is prime!!");
@@ -29,7 +29,7 @@ public class QPrimeNumber {
     private static boolean isPrime(int n, int c) {
         if(n==1 || n==0)
             return false;
-        while (c<= n/2){
+        while (c*c<=n){
             if(n % c ==0)
                return false;
             c++;
