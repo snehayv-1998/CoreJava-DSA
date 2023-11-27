@@ -1,4 +1,4 @@
-package collections.linklist;
+package collectionFrameWork.collection.list.linklist;
 
 public class Main {
     public static void main(String[] args) {

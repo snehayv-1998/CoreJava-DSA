@@ -1,4 +1,4 @@
-package collections.linklist;
+package collectionFrameWork.collection.list.linklist;
 
 public class SingleLinkedList {
 

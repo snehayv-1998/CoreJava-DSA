@@ -1,4 +1,4 @@
-package collections.linklist;
+package collectionFrameWork.collection.list.linklist;
 
 import java.util.HashSet;
 import java.util.LinkedList;

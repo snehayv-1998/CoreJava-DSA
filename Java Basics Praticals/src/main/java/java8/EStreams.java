@@ -16,7 +16,7 @@ public class EStreams {
         System.out.println("For each :" );
         names.stream().forEach(System.out::println);
 
-        //map
+        //collectionFrameWork.map
         System.out.println("\nMap :" );
         names.stream().map(String::toUpperCase).forEach(System.out::println);
 

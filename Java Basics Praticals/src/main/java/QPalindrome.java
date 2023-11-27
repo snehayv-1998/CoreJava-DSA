@@ -2,6 +2,7 @@ import java.util.Locale;
 
 public class QPalindrome {
     public static void main(String[] args) {
+        System.out.println(reverse(88755));
         String s = "adda";
        /* System.out.printf("\n\nGiven string %s is palindrome :  %b\n\n", s,palindrome(s));
         int i =10;*/
@@ -53,4 +54,9 @@ public class QPalindrome {
             return str.equals(reversed.toString());
         }
 
+    public static int reverse(int x) {
+
+        StringBuilder strBuilder = new StringBuilder( Integer.toString(x));
+        return Integer.parseInt(strBuilder.reverse().toString());
+    }
 }

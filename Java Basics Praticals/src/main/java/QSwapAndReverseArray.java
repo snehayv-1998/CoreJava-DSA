@@ -30,4 +30,5 @@ public class QSwapAndReverseArray {
         arr[i]=arr[j];
         arr[j]=temp;
     }
+
 }
