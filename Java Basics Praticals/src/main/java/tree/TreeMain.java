@@ -1,6 +1,4 @@
-package collectionFrameWork.collection.tree;
-
-import java.util.Scanner;
+package tree;
 
 public class TreeMain {
     public static void main(String[] args) {

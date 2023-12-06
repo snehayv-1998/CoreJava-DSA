@@ -1,4 +1,4 @@
-package collectionFrameWork.collection.tree;
+package tree;
 
 import java.util.*;
 
