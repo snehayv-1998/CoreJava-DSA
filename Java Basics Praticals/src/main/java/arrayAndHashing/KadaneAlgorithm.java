@@ -39,6 +39,4 @@ public class KadaneAlgorithm {
         return Arrays.copyOfRange(nums,ansStart,ansEnd+1);
     }
 
-//    public int maxProduct(int[] nums) {
-//    }
 }
