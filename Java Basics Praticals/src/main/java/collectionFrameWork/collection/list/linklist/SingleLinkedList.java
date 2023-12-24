@@ -7,15 +7,15 @@ public class SingleLinkedList {
     private int size = 0;
 
     class Node {
-        private int value;
-        private Node nextElement;
+        int value;
+        Node next;
 
         Node(int value){
             this.value = value;
         }
         Node(int value,Node nextElement){
             this.value = value;
-            this.nextElement = nextElement;
+            this.next = nextElement;
         }
     }
 
@@ -27,7 +27,7 @@ public class SingleLinkedList {
     }
     void addLastElement(int value){
         Node node = new Node(value);
-        tail.nextElement = node;
+        tail.next = node;
         tail = node;
         size++;
     }
@@ -43,9 +43,9 @@ public class SingleLinkedList {
         }
             Node temp = head;
             for (int i = 1; i<index;i++){
-                temp =temp.nextElement;
+                temp =temp.next;
             }
-            temp.nextElement = new Node(value,temp.nextElement);
+            temp.next = new Node(value,temp.next);
             size++;
 
     }
@@ -53,11 +53,14 @@ public class SingleLinkedList {
         Node temp = head;
         while (temp !=null){
             System.out.print(temp.value+"-->");
-            temp = temp.nextElement;
+            temp = temp.next;
         }
         System.out.print("END\n\n");
         System.out.println("Head value : "+head.value);
         System.out.println("Tail value: "+tail.value);
         System.out.println("Size : "+size);
+    }
+    Node getHead(){
+        return this.head;
     }
 }
