@@ -2,7 +2,7 @@ package recursion;
 
 import java.util.Arrays;
 
-public class Sudoko {
+public class Sudoku {
     public static void main(String[] args) {
         /*
         https://leetcode.com/problems/sudoku-solver/description/
