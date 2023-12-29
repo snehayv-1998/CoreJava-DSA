@@ -1,4 +1,4 @@
-package recursion;
+package recursionAndBacktracking;
 
 public class Numbers {
     static int counter = 1;

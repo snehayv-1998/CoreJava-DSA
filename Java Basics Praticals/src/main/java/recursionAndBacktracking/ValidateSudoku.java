@@ -1,6 +1,4 @@
-package recursion;
-
-import java.util.Arrays;
+package recursionAndBacktracking;
 
 public class ValidateSudoku {
     public static void main(String[] args) {
