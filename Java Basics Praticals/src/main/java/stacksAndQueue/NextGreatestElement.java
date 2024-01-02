@@ -20,8 +20,10 @@ public class NextGreatestElement {
         int n = num.length;
         int[] res = new int[n];
         Stack<Integer> stack = new Stack<>();
+        int c=0;
         for(int i = 2* n -1; i>=0; i--){
             while (!stack.empty()&& stack.peek()<=num[i%n]){
+                c++;
                 stack.pop();
             }
             if(i<n){
@@ -32,7 +34,7 @@ public class NextGreatestElement {
             }
             stack.push(num[i%n]);
         }
-
+        System.out.println("c :"+c);
         return res;
     }
 
