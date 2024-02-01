@@ -1,3 +1,5 @@
+package Strings;
+
 public class EString {
     public static void main(String[] args) {
         String a = "Hello"; //a(reference) will be created in stack memory and "Hello" (object) is created in String pool(a place within heap memory)
