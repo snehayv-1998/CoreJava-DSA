@@ -1,6 +1,7 @@
 package tree;
 
 import java.util.*;
+import java.util.stream.Collectors;
 /*
 https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
  */
@@ -18,37 +19,51 @@ public class VerticalOrderTraversal {
             this.right = right;
         }
     }
+    static  class Node{
+        int r;
+        int c;
+        TreeNode v;
+        Node(int r,int c,TreeNode v){
+            this.c=c;
+            this.r=r;
+            this.v=v;
+        }
+    }
     static List<List<Integer>> verticalTraversal(TreeNode root) {
         List<List<Integer>> ans = new ArrayList<>();
-        if(root == null)return ans;
-        Queue<Map.Entry<TreeNode,Integer>> queue = new ArrayDeque<>();
-        queue.offer(new AbstractMap.SimpleEntry<>(root,0));
-        Map<Integer,List<Integer>> res = new TreeMap<>();
-        traverse(queue,res);
-        for(Map.Entry<Integer,List<Integer>> entry:res.entrySet()){
-            Collections.sort(entry.getValue());
-            ans.add(entry.getValue());
+        if(root == null) return ans;
+        Queue<Node> queue = new ArrayDeque<>();
+        Map<Integer,ArrayList<Node>> map = new HashMap<>();
+        queue.offer(new Node(0,0,root));
+        int min =Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        while(!queue.isEmpty()){
+            Node removed = queue.poll();
+            TreeNode node = removed.v;
+            int col = removed.c;
+            int row = removed.r;
+            if(!map.containsKey(col)){
+                map.put(col,new ArrayList<>());
+            }
+            map.get(col).add(removed);
+            min = Math.min(min,col);
+            max = Math.max(max,col);
+            if(node.left!=null)
+                queue.offer(new Node(row,col-1,node.left));
+            if(node.right!=null)
+                queue.offer(new Node(row,col+1,node.right));
+        }
+
+        for(int i=min;i<=max;i++){
+            List<Node> node = map.get(i);
+            ans.add(node.stream().sorted(Comparator.comparingInt(n->n.r)).map(n->n.v.val).collect(Collectors.toList()));
         }
         return ans;
     }
-    static void traverse(Queue<Map.Entry<TreeNode, Integer>> queue, Map<Integer, List<Integer>> res){
-        while(!queue.isEmpty()){
-            Map.Entry<TreeNode,Integer> root = queue.poll();
-            TreeNode cur = root.getKey();
-            int col = root.getValue();
-            List<Integer> value = res.get(col) == null? new ArrayList<>(): res.get(col);
-            value.add(cur.val);
-            res.put(col,value);
-            if(cur.left != null)
-                queue.offer(new AbstractMap.SimpleEntry<>(cur.left,root.getValue()-1));
-            if(cur.right != null)
-                queue.offer(new AbstractMap.SimpleEntry<>(cur.right,root.getValue()+1));
-        }
-    }
     public static void main(String[] args) {
-        TreeNode left = new TreeNode(1,new TreeNode(0), new TreeNode(2));
-        TreeNode right = new TreeNode(4,new TreeNode(2),null);
-        TreeNode root = new TreeNode(3,left,right);
+        TreeNode left = new TreeNode(2,new TreeNode(4), new TreeNode(6));
+        TreeNode right = new TreeNode(3,new TreeNode(5),new TreeNode(7));
+        TreeNode root = new TreeNode(1,left,right);
         System.out.println("***********************Result: "+verticalTraversal(root));
 
     }

@@ -215,6 +215,20 @@ public class TreeQuestions {
       }
       return res;
   }
+    public List<Integer> rightSideViewDepth1stSearch(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if(root == null) return res;
+        helper(root,0,res);
+        return res;
+    }
+    void helper(TreeNode node, int level,  List<Integer> res ){
+        if(node == null) return;
+        if(level== res.size()){
+            res.add(node.val);
+        }
+        helper(node.right,level+1,res);
+        helper(node.left,level+1,res);
+    }
   //cousins
     //https://leetcode.com/problems/symmetric-tree/
 }
