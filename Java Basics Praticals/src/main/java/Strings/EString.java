@@ -1,5 +1,7 @@
 package Strings;
 
+import java.util.Arrays;
+
 public class EString {
     public static void main(String[] args) {
         String a = "Hello"; //a(reference) will be created in stack memory and "Hello" (object) is created in String pool(a place within heap memory)
@@ -27,5 +29,8 @@ public class EString {
         System.out.println("mobileNumberWithSpecialChar excluding isd : "+(mobileNumberWithSpecialChar.startsWith(isdWithSpecialChar)?mobileNumberWithSpecialChar.substring(isdWithSpecialChar.length()):mobileNumberWithSpecialChar));
         String str = "A man, a plan, a canal: Panama";
         System.out.println("A man, a plan, a canal: Panama : "+ str.replaceAll("\\W",""));
+        System.out.println("split1:"+ Arrays.asList("MM-DD".split("||")));//[M, M, -, D, G]
+        System.out.println("split 2 :"+ Arrays.toString("MM-DD".split("\\|\\|")));//[MM-DD]
+
     }
 }

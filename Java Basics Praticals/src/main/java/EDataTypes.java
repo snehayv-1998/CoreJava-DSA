@@ -10,6 +10,11 @@ public class EDataTypes {
     public static void main(String args[])
         {
 
+            float fl = 1.0F;
+            int n4 = '1';
+            double n3 = 1.0;
+            short n1 = 1;
+            System.out.println(fl+ " "+n4+" "+n3+" "+n1);
             // Creating and initializing custom character
             char a = 'G';
 

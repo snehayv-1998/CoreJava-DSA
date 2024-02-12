@@ -17,9 +17,11 @@ public class ECyclicSort {
             int correctIndex = i+1;
             if(a[i] != correctIndex || i != a.length-1){
                 swap(a,i,correctIndex);
+                i++;
             }else
                 i++;
         }
+
     }
 
     private static void swap(int[] a, int i, int correctIndex) {

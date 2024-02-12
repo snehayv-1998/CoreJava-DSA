@@ -1,4 +1,4 @@
-package binarySearch;
+package tree;
 
 import tree.TreeQuestions;
 

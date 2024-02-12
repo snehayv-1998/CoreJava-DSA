@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BinaryTree {
     private Node root;
-    private class Node{
+     class Node{
         int val;
         int height;
         Node left;
