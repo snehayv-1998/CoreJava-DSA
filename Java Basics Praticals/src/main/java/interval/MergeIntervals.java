@@ -21,12 +21,12 @@ Explanation: Intervals [1,4] and [4,5] are considered overlapping.
      */
 
     public static void main(String[] args) {
-        System.out.println(Arrays.deepToString(merge(new int[][]{{1,3},{2,6},{2,7},{8,10},{15,18}})));
+        System.out.println(Arrays.deepToString(merge(new int[][]{{1,3},{4,8},{4,7},{9,10},{15,18}})));
     }
     static int[][] merge(int[][] intervals) {
         if (intervals.length < 1)
             return intervals;
-        Arrays.sort(intervals, (i1,i2)->i1[0]-i2[0]);
+        Arrays.sort(intervals, (i1,i2)->(i1[0]==i2[0])?i1[1]-i2[1]:i1[0]-i2[0]); //O(NlogN)
         System.out.println(Arrays.deepToString(intervals));
         int[] in = intervals[0];
         List<int[]> ans = new ArrayList<>();
