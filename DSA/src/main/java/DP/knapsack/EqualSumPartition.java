@@ -3,6 +3,7 @@ package DP.knapsack;
 public class EqualSumPartition {
     public static void main(String[] args) {
         System.out.println(canPartition(new int[]{1,5,11,5}));
+        System.out.println(canPartition(new int[]{1,3}));
     }
     public static boolean canPartition(int[] nums) {
         int sum = 0;

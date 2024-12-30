@@ -18,10 +18,13 @@ Explanation: There is no subset that add up to 30.
     public static void main(String[] args) {
         System.out.println(subsetTabulation(new int[]{3, 34, 4, 12, 5, 2},9,6));
         System.out.println(subsetTabulation(new int[]{3, 34, 4, 12, 5, 2},30,6));
+        System.out.println(subsetTabulation(new int[]{2,1},1,2));
 
     }
     public static boolean subsetTabulation(int[] nums, int w,int n) {
         boolean[][] dp = new boolean[n + 1][w + 1];
+        //since array size is 0, so we cannot achieve the target we cant so dp[0][j]=false. since by default array initialize the take care of false initialize, we no need to take care of it again.
+        //since sum =0 we can achieve it by empty set so dp[i][0]=true
         for (int i = 0; i <= n; i++) {
             dp[i][0] = true;
         }
