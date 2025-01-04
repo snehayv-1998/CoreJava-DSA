@@ -13,7 +13,8 @@ public class DiameterOfTree {
          this.left = left;
          this.right = right;}}
     public static void main(String[] args) {
-        System.out.println(calculateHeight(new TreeNode(1,new TreeNode(2),new TreeNode(3))));
+        calculateHeight(new TreeNode(1,new TreeNode(2),new TreeNode(3)));
+        System.out.println(diameter);
     }
      // Function to calculate
         // the height of a subtree
