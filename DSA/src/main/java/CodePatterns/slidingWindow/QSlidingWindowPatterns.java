@@ -1,4 +1,4 @@
-package CodePatterns;
+package CodePatterns.slidingWindow;
 
 import java.util.ArrayList;
 import java.util.Arrays;
